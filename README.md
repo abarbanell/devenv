@@ -9,6 +9,7 @@ set up a dockerized development environment for loop nav. We will need the follo
 ideas from (but we use boot2docker on top of vagrant, instead of vagrant directly): 
 
 GIT: [https://github.com/relateiq/docker_public](https://github.com/relateiq/docker_public)
+
 Blog: [http://blog.relateiq.com/a-docker-dev-environment-in-24-hours-part-2-of-2/](http://blog.relateiq.com/a-docker-dev-environment-in-24-hours-part-2-of-2/)
 
 
