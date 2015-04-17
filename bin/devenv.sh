@@ -6,13 +6,16 @@ cd $SCRIPT_HOME/..
 case "$1" in
 	up)
 		boot2docker up
+		$(boot2docker shellinit)
 		docker-compose up -d
 		;;
 down)
+		$(boot2docker shellinit)
 		docker-compose stop
 		boot2docker down
 		;;
 shellinit)
+		$(boot2docker shellinit)
 		boot2docker shellinit
 		;;
 update)
