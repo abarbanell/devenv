@@ -20,16 +20,21 @@ but we have a few differences:
 
 just 
 ```
-git clone
+git clone https://abarbanell@bitbucket.org/abarbanell/loopnav.devenv.git
 ```
 this repo, and do one of these commands: 
 
 ```
 $ bin/devenv.sh up
+$ $(bin/devenv.sh shellinit)
+$ boot2docker ps
+         Name                       Command               State                        Ports                       
+------------------------------------------------------------------------------------------------------------------
+loopnavdevenv_mongo_1    /entrypoint.sh mongod            Up      0.0.0.0:27017->27017/tcp                         
+loopnavdevenv_rabbit_1   /docker-entrypoint.sh rabb ...   Up      0.0.0.0:15672->15672/tcp, 0.0.0.0:5672->5672/tcp 
 
 $ bin/devenv.sh down
 
-$ $(bin/devenv.sh shellinit)
 
 ```
 
