@@ -27,7 +27,7 @@ this repo, and do one of these commands:
 ```
 $ bin/devenv.sh up
 $ $(bin/devenv.sh shellinit)
-$ boot2docker ps
+$ docker ps
          Name                       Command               State                        Ports                       
 ------------------------------------------------------------------------------------------------------------------
 loopnavdevenv_mongo_1    /entrypoint.sh mongod            Up      0.0.0.0:27017->27017/tcp                         
