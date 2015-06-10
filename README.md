@@ -1,10 +1,9 @@
-# loopnav.devenv
+# devenv
 
-set up a dockerized development environment for loop nav. We will need the following components in separate docker containers: 
+set up a dockerized development environment (e.g. for [abarbanell/loopnav](https://github.com/abarbanell/loopnav). We will need the following components in separate docker containers: 
 
 - mongo
 - rabbitMQ
-- node.js optional (otherwise use localhost) 
 
 ideas from:
 
@@ -20,7 +19,7 @@ but we have a few differences:
 
 just 
 ```
-git clone https://abarbanell@bitbucket.org/abarbanell/loopnav.devenv.git
+git clone https://github.com/abarbanell/devenv.git
 ```
 this repo, and do one of these commands: 
 
