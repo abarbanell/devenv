@@ -1,6 +1,9 @@
 # devenv
 
-set up a dockerized development environment (e.g. for [abarbanell/loopnav](https://github.com/abarbanell/loopnav). We will need the following components in separate docker containers: 
+set up a dockerized development environment (e.g. for
+[abarbanell/loopnav](https://github.com/abarbanell/loopnav) ).  This
+works for MacOS, but the ideas may be usable also elsewhere.  We
+will need the following components in separate docker containers:
 
 - mongo
 - rabbitMQ
@@ -17,7 +20,15 @@ but we have a few differences:
 
 ## How to use
 
-just 
+just
+
+- install [boot2docker for MacOS](https://docs.docker.com/installation/mac/) 
+- install [docker-compose](https://docs.docker.com/compose/install/)
+
+
+then
+
+
 ```
 git clone https://github.com/abarbanell/devenv.git
 ```
