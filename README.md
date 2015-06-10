@@ -1,6 +1,7 @@
-# devenv
+# devenv - Docker setup for mongo and RabbitMQ
 
-set up a dockerized development environment (e.g. for
+This is a quick recipe how to set up a dockerized development environment 
+(e.g. for one of my node.js projects
 [abarbanell/loopnav](https://github.com/abarbanell/loopnav) ).  This
 works for MacOS, but the ideas may be usable also elsewhere.  We
 will need the following components in separate docker containers:
@@ -8,15 +9,15 @@ will need the following components in separate docker containers:
 - mongo
 - rabbitMQ
 
-ideas from:
+I took some ideas from:
 
 GIT: [https://github.com/relateiq/docker_public](https://github.com/relateiq/docker_public)
 
 Blog: [http://blog.relateiq.com/a-docker-dev-environment-in-24-hours-part-2-of-2/](http://blog.relateiq.com/a-docker-dev-environment-in-24-hours-part-2-of-2/)
 
-but we have a few differences: 
-- we use boot2docker instead of vagrant
-- we use docker-compose to simplify the container setup.
+but in my setup there are  a few differences: 
+- I use boot2docker instead of vagrant
+- i use docker-compose to simplify the container setup.
 
 ## How to use
 
@@ -35,15 +36,15 @@ git clone https://github.com/abarbanell/devenv.git
 this repo, and do one of these commands: 
 
 ```
-$ bin/devenv.sh up
+$ devenv.sh up
 $ $(bin/devenv.sh shellinit)
 $ docker ps
          Name                       Command               State                        Ports                       
 ------------------------------------------------------------------------------------------------------------------
-loopnavdevenv_mongo_1    /entrypoint.sh mongod            Up      0.0.0.0:27017->27017/tcp                         
-loopnavdevenv_rabbit_1   /docker-entrypoint.sh rabb ...   Up      0.0.0.0:15672->15672/tcp, 0.0.0.0:5672->5672/tcp 
+devenv_mongo_1    /entrypoint.sh mongod            Up      0.0.0.0:27017->27017/tcp                         
+devenv_rabbit_1   /docker-entrypoint.sh rabb ...   Up      0.0.0.0:15672->15672/tcp, 0.0.0.0:5672->5672/tcp 
 
-$ bin/devenv.sh down
+$ devenv.sh down
 
 
 ```
