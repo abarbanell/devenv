@@ -1,7 +1,8 @@
 #!/bin/sh
 
 SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
-cd $SCRIPT_HOME/..
+echo SCRIPT_HOME: $SCRIPT_HOME
+cd $SCRIPT_HOME
 
 case "$1" in
 	up)
