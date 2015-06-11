@@ -49,4 +49,8 @@ $ devenv.sh down
 
 ```
 
+## See also
 
+Annou§ncement on my
+[blog](http://blog.abarbanell.de/linux/2015/06/10/devenv---docker-setup-for-mongo-and-rabbitmq/?utm_source=github&utm_medium=link&utm_campaign=d-2015-06-11)
+from 10-Jun-2015.
