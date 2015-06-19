@@ -6,8 +6,9 @@ This is a quick recipe how to set up a dockerized development environment
 works for MacOS, but the ideas may be usable also elsewhere.  We
 will need the following components in separate docker containers:
 
-- mongo
-- rabbitMQ
+- mongo - as a data store
+- rabbitMQ - used as message queue for background jobs
+- nginx - as SSL reverse proxy to serve https traffic
 
 I took some ideas from:
 
@@ -33,7 +34,20 @@ then
 ```
 git clone https://github.com/abarbanell/devenv.git
 ```
-this repo, and do one of these commands: 
+
+this repo, the first time you need to create SSL certificates for
+the nginx container.
+
+```
+$ cd devenv
+$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx.conf/cert.key -out nginx.conf/cert.crt
+```
+
+You will need to answer a few   questions for the SSL certificate
+signing request, but since we are not ging to use this for real
+signed certificates it does not really matter what you enter here.
+
+and do one of these commands: 
 
 ```
 $ devenv.sh up

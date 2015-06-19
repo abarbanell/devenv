@@ -8,7 +8,6 @@ case "$1" in
 	up)
 		boot2docker up
 		$(boot2docker shellinit)
-		openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx.conf/cert.key -out nginx.conf/cert.crt
 		docker-compose up -d
 		;;
 down)
