@@ -1,0 +1,6 @@
+
+# dons save the self-signed certificates
+
+nginx.conf/cert.key
+nginx.conf/cert.crt
+
