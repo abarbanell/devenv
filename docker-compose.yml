@@ -7,4 +7,9 @@ rabbit:
   ports:
    - "5672:5672"
    - "15672:15672"
+nginx:
+  image: nginx
+  ports:
+   - "80:80"
+   - "443:443"
    
