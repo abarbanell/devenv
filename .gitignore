@@ -4,3 +4,9 @@
 nginx.conf/cert.key
 nginx.conf/cert.crt
 
+
+# node container - mount point for source directory
+
+node/src
+node/src.template/node_modules/*
+

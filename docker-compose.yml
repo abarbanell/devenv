@@ -14,4 +14,11 @@ nginx:
    - "443:443"
   volumes:
    - nginx.conf/:/etc/nginx/:ro
+  links:
+   - node:node
+node:
+  build: ./node
+  ports: 
+   - "3000:3000"
+
    

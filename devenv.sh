@@ -4,6 +4,14 @@ SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
 echo SCRIPT_HOME: $SCRIPT_HOME
 cd $SCRIPT_HOME
 
+if [ -e node/src ] 
+then
+	echo "src dir for node container exists"
+else
+	ln -s node/src.template node/src
+	echo "linked template project into node container" 
+fi
+
 case "$1" in
 	up)
 		boot2docker up
