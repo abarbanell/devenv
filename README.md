@@ -9,6 +9,7 @@ will need the following components in separate docker containers:
 - mongo - as a data store
 - rabbitMQ - used as message queue for background jobs
 - nginx - as SSL reverse proxy to serve https traffic
+- nodejs - a container running your node application, using nodemon
 
 I took some ideas from:
 
@@ -43,6 +44,10 @@ $ cd devenv
 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx.conf/cert.key -out nginx.conf/cert.crt
 ```
 
+Note - if you use this name for your certificate then .gitignore
+will make sure they do not get accidentally included in your git
+repository.
+
 You will need to answer a few   questions for the SSL certificate
 signing request, but since we are not ging to use this for real
 signed certificates it does not really matter what you enter here.
@@ -57,6 +62,7 @@ $ docker ps
 ------------------------------------------------------------------------------------------------------------------
 devenv_mongo_1    /entrypoint.sh mongod            Up      0.0.0.0:27017->27017/tcp                         
 devenv_rabbit_1   /docker-entrypoint.sh rabb ...   Up      0.0.0.0:15672->15672/tcp, 0.0.0.0:5672->5672/tcp 
+<you should also see nginx and node here as soon as they are working :) >
 
 $ devenv.sh down
 
