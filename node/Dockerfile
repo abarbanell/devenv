@@ -12,7 +12,7 @@ WORKDIR /src
 ADD . /src
 
 # Expose port
-EXPOSE  3000
+EXPOSE  3000:3000
 
 # Run app using nodemon
 CMD ["nodemon", "/src/bin/www"]
