@@ -2,21 +2,22 @@
 
 SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
 echo SCRIPT_HOME: $SCRIPT_HOME
-cd $SCRIPT_HOME
 
-if [ -e node/src ] 
+cd $SCRIPT_HOME/node
+if [ -e src ] 
 then
 	echo "src dir for node container exists"
 else
-	if [ -h node/src ]
+	if [ -h src ]
 	then
 		echo "src dir exists as symbolic link"
 	else
-		ln -s node/src.template node/src
+		ln -s src.template src
 		echo "linked template project into node container" 
 	fi
 fi
 
+cd $SCRIPT_HOME
 case "$1" in
 	up)
 		boot2docker up
