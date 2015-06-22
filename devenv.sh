@@ -8,8 +8,13 @@ if [ -e node/src ]
 then
 	echo "src dir for node container exists"
 else
-	ln -s node/src.template node/src
-	echo "linked template project into node container" 
+	if [ -h node/src ]
+	then
+		echo "src dir exists as symbolic link"
+	else
+		ln -s node/src.template node/src
+		echo "linked template project into node container" 
+	fi
 fi
 
 case "$1" in
