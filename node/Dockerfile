@@ -8,8 +8,10 @@ MAINTAINER Tobias Abarbanell
 RUN npm install -g nodemon
 
 # Define working directory
+VOLUME /src
 WORKDIR /src
-ADD . /src
 
-# Run app using nodemon
-CMD ["nodemon", "/src/bin/www"]
+
+# Run app using "npm start" - which may use nodemon
+ENTRYPOINT ["npm"]
+CMD ["start"]
