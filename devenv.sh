@@ -34,8 +34,11 @@ shellinit)
 		;;
 update)
 		git pull
+		boot2docker upgrade
+		boot2docker delete
+		boot2docker init
 		;;
 *)
-		echo usage: $0 "[up|dhellinit|update]"
+		echo usage: $0 "[up|down|shellinit|update]"
 		;;
 esac
