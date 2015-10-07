@@ -13,7 +13,7 @@ nginx:
    - "80:80"
    - "443:443"
   volumes:
-   - nginx.conf/:/etc/nginx/:ro
+   - ./nginx.conf/:/etc/nginx/:ro
   links:
    - node:node
 node:

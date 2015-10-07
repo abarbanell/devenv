@@ -19,27 +19,30 @@ fi
 
 cd $SCRIPT_HOME
 case "$1" in
-	up)
-		boot2docker up
-		$(boot2docker shellinit)
+	create)
+		docker-machine rm default
+		docker-machine create -d virtualbox default
+		;;
+	start)
+		docker-machine start default
+		eval "$(docker-machine env default)"
 		docker-compose up -d
 		;;
-down)
-		$(boot2docker shellinit)
+stop)
+		eval "$(docker-machine env default)"
 		docker-compose stop
-		boot2docker down
+		docker-machine stop default
 		;;
-shellinit)
-		$(boot2docker shellinit)
-		boot2docker shellinit
+env)
+		docker-machine env default
 		;;
-update)
+upgrade)
 		git pull
-		boot2docker upgrade
-		boot2docker delete
-		boot2docker init
+		docker-machine upgrade default
+		docker-machine rm default
+		docker-machine create -d virtualbox default
 		;;
 *)
-		echo usage: $0 "[up|down|shellinit|update]"
+		echo usage: $0 "[create|start|stop|env|upgrade]"
 		;;
 esac

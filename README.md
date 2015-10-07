@@ -1,6 +1,6 @@
 # devenv - Docker setup for mongo and RabbitMQ
 
-*Note: this uses the boot2docker tool on MacOS which is now deprecated. Working on an upgrade of this so stay tuned.*
+*Note: this README uses the boot2docker tool on MacOS which is now deprecated. Working on an upgrade of this to docker-machine, already in progress on the code. so stay tuned for update of the README.*
 
 This is a quick recipe how to set up a dockerized development environment 
 (e.g. for one of my node.js projects
