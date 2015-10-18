@@ -20,8 +20,9 @@ fi
 cd $SCRIPT_HOME
 case "$1" in
 	create)
-		docker-machine rm default
+		docker-machine rm -f default
 		docker-machine create -d virtualbox default
+		docker-machine env default
 		;;
 	start)
 		docker-machine start default
