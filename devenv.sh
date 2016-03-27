@@ -27,15 +27,18 @@ case "$1" in
 	start)
 		docker-machine start default
 		eval "$(docker-machine env default)"
+		export DOCKER_IP=`docker-machine ip default`
 		docker-compose up -d
 		;;
 stop)
 		eval "$(docker-machine env default)"
+		export DOCKER_IP=`docker-machine ip default`
 		docker-compose stop
 		docker-machine stop default
 		;;
 env)
 		docker-machine env default
+		export DOCKER_IP=`docker-machine ip default`
 		;;
 upgrade)
 		git pull
