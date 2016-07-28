@@ -9,4 +9,5 @@ nginx.conf/cert.crt
 
 node/src
 node/src.template/node_modules/*
+node/npm-debug.log
 

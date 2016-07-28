@@ -1,4 +1,9 @@
 #!/bin/sh
+# original script working with virtualbox, now switched to docker-for-mac with HyperKit VM
+# status: not yet completely transformed
+# with docker-for-mac we should not use docker-machine any more because it will point nowhere or to the wrong VM. 
+# So most of this script actually got redundant. We'll keep it for a while but maybe we just eliminate it later.
+
 
 SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
 echo SCRIPT_HOME: $SCRIPT_HOME
@@ -20,33 +25,21 @@ fi
 cd $SCRIPT_HOME
 case "$1" in
 	create)
-		docker-machine rm -f default
-		docker-machine create -d virtualbox default
-		docker-machine env default
+		echo '--- please use docker-for-mac to create new machine '
 		;;
 	start)
-		docker-machine start default
-		eval "$(docker-machine env default)"
-		export DOCKER_IP=`docker-machine ip default`
 		docker-compose up -d
 		;;
 stop)
-		eval "$(docker-machine env default)"
-		export DOCKER_IP=`docker-machine ip default`
 		docker-compose stop
-		docker-machine stop default
 		;;
 env)
-		docker-machine env default
-		export DOCKER_IP=`docker-machine ip default`
+		echo '--- please use docker commands (info or inspect) to get environment'
 		;;
 upgrade)
 		git pull
-		docker-machine upgrade default
-		docker-machine rm default
-		docker-machine create -d virtualbox default
 		;;
 *)
-		echo usage: $0 "[create|start|stop|env|upgrade]"
+		echo usage: $0 "[create|start|stop|env|upgrade] - only start and stop do anything though"
 		;;
 esac
