@@ -20,8 +20,8 @@ not any more.
 
 This project consists of a few parts, each of them is very small
 
-- a file docker-compose.yml which defines the different docker
-containers required for your development. A typical stack for some
+- a file _docker-compose.yml_ which defines the different docker
+containers required for our development. A typical stack for some
 of my projects has a MongoDB, a RabbitMQ, a node.js and a nginx
 container.
 - some of the containers may have files here for mounting into the
@@ -29,11 +29,11 @@ container, e.g. the nginx container has a folder with configuration
 files and security certificates which are required inside the
 container
 - a folder for the node container to put your project files (optional)
-- a .gitignore file to make sure that some files are excluded from
+- a _.gitignore_ file to make sure that some files are excluded from
 source control, e.g. we always want to avoid to have the security
-certificates of Bginx in our git repo, but we also want to excluded
+certificates of Nginx in our git repo, but we also want to exclude
 the debug log of the node container.
-- a startup scrikt devenv.sh which helps in issuing various commands
+- a startup script _devenv.sh_ which helps in issuing various commands
 to start and stop the group of containers. With the progress of the
 docker engine (notable version 1.12) this is almost no longer
 necessary.
@@ -70,7 +70,7 @@ $ docker-compose up -d
 $ docker-compose stop
 ```
 
-You see, the devenv.sh script is nothing much. I will leave it
+You see, the _devenv.sh_ script is nothing much. I will leave it
 hanging around for a while and see whather there is a need for this
 wrapper in the future for some reason.
 
