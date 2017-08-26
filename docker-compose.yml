@@ -2,23 +2,3 @@ mongo:
   image: mongo
   ports: 
    - "27017:27017"
-rabbit:
-  image: rabbitmq
-  ports:
-   - "5672:5672"
-   - "15672:15672"
-nginx:
-  image: nginx
-  ports:
-   - "80:80"
-   - "443:443"
-  volumes:
-   - ./nginx.conf/:/etc/nginx/:ro
-  links:
-   - node:node
-node:
-  build: ./node
-  ports: 
-   - "3000:3000"
-
-   
