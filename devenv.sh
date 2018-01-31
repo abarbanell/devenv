@@ -28,6 +28,7 @@ case "$1" in
 		echo '--- please use docker-for-mac to create new machine '
 		;;
 	start)
+		docker-compose down
 		docker-compose up -d
 		;;
 stop)
